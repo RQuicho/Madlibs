@@ -30,7 +30,7 @@ const MadlibForm = ({addData}) => {
         type='text'
         name='noun'
         placeholder='noun'
-        value={FormData.noun}
+        value={formData.noun}
         onChange={handleChange} 
       />
       <input 
@@ -38,7 +38,7 @@ const MadlibForm = ({addData}) => {
         type='text'
         name='noun2'
         placeholder='noun2'
-        value={FormData.noun2}
+        value={formData.noun2}
         onChange={handleChange} 
       />
       <input 
@@ -46,7 +46,7 @@ const MadlibForm = ({addData}) => {
         type='text'
         name='adjective'
         placeholder='adjective'
-        value={FormData.adjective}
+        value={formData.adjective}
         onChange={handleChange} 
       />
       <input 
@@ -54,7 +54,7 @@ const MadlibForm = ({addData}) => {
         type='text'
         name='color'
         placeholder='color'
-        value={FormData.color}
+        value={formData.color}
         onChange={handleChange} 
       />
       <button>Get Story</button>
