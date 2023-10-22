@@ -6,7 +6,6 @@ const Madlib = () => {
     <div>
       <h1>Madlibs!</h1>
       <MadlibSentence />
-      <button>Restart</button>
     </div>
   )
 }
