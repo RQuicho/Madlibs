@@ -27,25 +27,14 @@ const addCommas = (num) => {
   console.log('numArray...', numArray);
 
   // use splice to insert comma at desired index
-  // https://stackoverflow.com/questions/54077062/insert-into-array-at-every-nth-position
-  for (let i=0; i<numArray.length; i++) {
-
+  // reverse array to iterate through every 3rd index
+  numArray.reverse();
+  for (let i=3; i<numArray.length; i += 4) {
+    numArray.splice(i, 0, ',');
   }
+  numArray.reverse();
 
-  let commaIdx = numArray.length - 3;
-  if (numArray.length % 3 === 1) {
-    numArray.splice(commaIdx, 0, ',');
-    commaIdx = 
-  }
-
-  numArray.splice(2, 0, ',');
-  console.log(numArray);
-
-  // convert numArray to a str
-  const result = numArray.join('');
-  console.log(result);
-
-
+  return numArray.join('');
 }
 
 module.exports = addCommas;
@@ -61,3 +50,21 @@ module.exports = addCommas;
 // console.log('3rdCharIdx...', thirdCharIdx);
 // console.log(result.charAt(thirdCharIdx));
 // console.log(result.charAt(3));
+
+
+
+ // let commaIdx = numArray.length - 3;
+  // if (numArray.length % 3 === 1) {
+  //   numArray.splice(commaIdx, 0, ',');
+  //   commaIdx = 
+  // }
+
+  // numArray.splice(2, 0, ',');
+  // console.log(numArray);
+
+  // // convert numArray to a str
+  // const result = numArray.join('');
+  // console.log(result);
+
+
+  // https://stackoverflow.com/questions/54077062/insert-into-array-at-every-nth-position
