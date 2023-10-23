@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import useToggleHide from './hooks/useToggleHide';
+// import useHandleChange from './hooks/useHandleChange';
 import MadlibSentence from './MadlibSentence';
 
 const MadlibForm = () => {
@@ -12,6 +13,7 @@ const MadlibForm = () => {
   const [formData, setFormData] = useState(initialState);
   const [data, setData] = useState('');
   const [isHidden, hideForm] = useToggleHide();
+  // const [changedData, handleChange] = useHandleChange();
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -75,10 +77,6 @@ const MadlibForm = () => {
       <div style={{display: !isHidden ? 'none' : 'block'}}>
         <MadlibSentence data={data}/>
       </div>
-      {/* <div style={{display: !isHidden ? 'none' : 'block'}}>
-        <p>There was a {data.color} {data.noun} who loved a {data.adjective} {data.noun2}.</p>
-        <button>Restart</button>
-      </div> */}
     </>
   )
 }
