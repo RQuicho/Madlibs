@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import useToggleHide from './hooks/useToggleHide';
 import MadlibSentence from './MadlibSentence';
 
-const MadlibForm = ({addData}) => {
+const MadlibForm = () => {
   const initialState = {
     noun: '',
     noun2: '',
@@ -10,6 +10,7 @@ const MadlibForm = ({addData}) => {
     color: ''
   }
   const [formData, setFormData] = useState(initialState);
+  const [data, setData] = useState('');
   const [isHidden, hideForm] = useToggleHide();
 
   const handleChange = (e) => {
@@ -18,6 +19,10 @@ const MadlibForm = ({addData}) => {
       ...formData,
       [name]: value
     }));
+  }
+
+  const addData = (newData) => {
+    setData(newData);
   }
 
   const handleSubmit = (e) => {
@@ -67,9 +72,10 @@ const MadlibForm = ({addData}) => {
           <button>Get Story</button>
         </form>
       </div>
-      {/* <div style={{display: !isHidden ? 'none' : 'block'}}>
-        <MadlibSentence />
-      </div> */}
+      <div style={{display: !isHidden ? 'none' : 'block'}}>
+        <p>There was a {data.color} {data.noun} who loved a {data.adjective} {data.noun2}.</p>
+        <button>Restart</button>
+      </div>
     </>
   )
 }

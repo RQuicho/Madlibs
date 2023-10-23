@@ -10,9 +10,9 @@ const MadlibSentence = () => {
   const addData = (newData) => {
     setData(newData);
   }
+  
   return (
-    <div>
-      <MadlibForm addData={addData}/>
+    <div style={{display: !isHidden ? 'none' : 'block'}}>
       <p>There was a {data.color} {data.noun} who loved a {data.adjective} {data.noun2}.</p>
       <button>Restart</button>
     </div>
